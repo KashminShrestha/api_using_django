@@ -65,11 +65,43 @@
         "documentation": {}
     },
     {
-        "label": "path",
-        "importPath": "django.urls",
-        "description": "django.urls",
+        "label": "permissions",
+        "importPath": "rest_framework",
+        "description": "rest_framework",
         "isExtraImport": true,
-        "detail": "django.urls",
+        "detail": "rest_framework",
+        "documentation": {}
+    },
+    {
+        "label": "serializers",
+        "importPath": "rest_framework",
+        "description": "rest_framework",
+        "isExtraImport": true,
+        "detail": "rest_framework",
+        "documentation": {}
+    },
+    {
+        "label": "routers",
+        "importPath": "rest_framework",
+        "description": "rest_framework",
+        "isExtraImport": true,
+        "detail": "rest_framework",
+        "documentation": {}
+    },
+    {
+        "label": "get_schema_view",
+        "importPath": "drf_yasg.views",
+        "description": "drf_yasg.views",
+        "isExtraImport": true,
+        "detail": "drf_yasg.views",
+        "documentation": {}
+    },
+    {
+        "label": "openapi",
+        "importPath": "drf_yasg",
+        "description": "drf_yasg",
+        "isExtraImport": true,
+        "detail": "drf_yasg",
         "documentation": {}
     },
     {
@@ -138,11 +170,27 @@
         "documentation": {}
     },
     {
-        "label": "timezone",
-        "importPath": "django.utils",
-        "description": "django.utils",
+        "label": "rest_framework",
+        "importPath": "django_filters",
+        "description": "django_filters",
         "isExtraImport": true,
-        "detail": "django.utils",
+        "detail": "django_filters",
+        "documentation": {}
+    },
+    {
+        "label": "rest_framework",
+        "importPath": "django_filters",
+        "description": "django_filters",
+        "isExtraImport": true,
+        "detail": "django_filters",
+        "documentation": {}
+    },
+    {
+        "label": "Product",
+        "importPath": "store.models",
+        "description": "store.models",
+        "isExtraImport": true,
+        "detail": "store.models",
         "documentation": {}
     },
     {
@@ -154,19 +202,11 @@
         "documentation": {}
     },
     {
-        "label": "serializers",
-        "importPath": "rest_framework",
-        "description": "rest_framework",
+        "label": "PageNumberPagination",
+        "importPath": "rest_framework.pagination",
+        "description": "rest_framework.pagination",
         "isExtraImport": true,
-        "detail": "rest_framework",
-        "documentation": {}
-    },
-    {
-        "label": "status",
-        "importPath": "rest_framework",
-        "description": "rest_framework",
-        "isExtraImport": true,
-        "detail": "rest_framework",
+        "detail": "rest_framework.pagination",
         "documentation": {}
     },
     {
@@ -178,43 +218,27 @@
         "documentation": {}
     },
     {
-        "label": "render",
-        "importPath": "django.shortcuts",
-        "description": "django.shortcuts",
+        "label": "ProductPagination",
+        "importPath": "store.paginations",
+        "description": "store.paginations",
         "isExtraImport": true,
-        "detail": "django.shortcuts",
+        "detail": "store.paginations",
         "documentation": {}
     },
     {
-        "label": "get_object_or_404",
-        "importPath": "django.shortcuts",
-        "description": "django.shortcuts",
+        "label": "ProductFilterSet",
+        "importPath": "store.filters",
+        "description": "store.filters",
         "isExtraImport": true,
-        "detail": "django.shortcuts",
+        "detail": "store.filters",
         "documentation": {}
     },
     {
-        "label": "APIView",
-        "importPath": "rest_framework.views",
-        "description": "rest_framework.views",
+        "label": "ModelViewSet",
+        "importPath": "rest_framework.viewsets",
+        "description": "rest_framework.viewsets",
         "isExtraImport": true,
-        "detail": "rest_framework.views",
-        "documentation": {}
-    },
-    {
-        "label": "api_view",
-        "importPath": "rest_framework.decorators",
-        "description": "rest_framework.decorators",
-        "isExtraImport": true,
-        "detail": "rest_framework.decorators",
-        "documentation": {}
-    },
-    {
-        "label": "Response",
-        "importPath": "rest_framework.response",
-        "description": "rest_framework.response",
-        "isExtraImport": true,
-        "detail": "rest_framework.response",
+        "detail": "rest_framework.viewsets",
         "documentation": {}
     },
     {
@@ -240,7 +264,7 @@
         "kind": 5,
         "importPath": "project.settings",
         "description": "project.settings",
-        "peekOfCode": "BASE_DIR = Path(__file__).resolve().parent.parent\n# Quick-start development settings - unsuitable for production\n# See https://docs.djangoproject.com/en/5.0/howto/deployment/checklist/\n# SECURITY WARNING: keep the secret key used in production secret!\nSECRET_KEY = os.getenv('SECRET_KEY')\n# SECURITY WARNING: don't run with debug turned on in production!\n# DEBUG = True if os.getenv('DEBUG', 'True') == 'True' else False\nDEBUG = os.getenv('DEBUG', 'True')=='True'\nALLOWED_HOSTS=os.getenv('ALLOWED_HOSTS').split(',')\nif DEBUG:",
+        "peekOfCode": "BASE_DIR = Path(__file__).resolve().parent.parent\n# Quick-start development settings - unsuitable for production\n# See https://docs.djangoproject.com/en/5.0/howto/deployment/checklist/\n# SECURITY WARNING: keep the secret key used in production secret!\nSECRET_KEY = os.getenv('SECRET_KEY')\n# SECURITY WARNING: don't run with debug turned on in production!\n# DEBUG = True if os.getenv('DEBUG', 'True') == 'True' else False\nDEBUG = os.getenv('DEBUG', 'True') == 'True'\nALLOWED_HOSTS = os.getenv('ALLOWED_HOSTS').split(',')\nif DEBUG:",
         "detail": "project.settings",
         "documentation": {}
     },
@@ -249,7 +273,7 @@
         "kind": 5,
         "importPath": "project.settings",
         "description": "project.settings",
-        "peekOfCode": "SECRET_KEY = os.getenv('SECRET_KEY')\n# SECURITY WARNING: don't run with debug turned on in production!\n# DEBUG = True if os.getenv('DEBUG', 'True') == 'True' else False\nDEBUG = os.getenv('DEBUG', 'True')=='True'\nALLOWED_HOSTS=os.getenv('ALLOWED_HOSTS').split(',')\nif DEBUG:\n    ALLOWED_HOSTS = []\n# Application definition\nINSTALLED_APPS = [\n    'django.contrib.admin',",
+        "peekOfCode": "SECRET_KEY = os.getenv('SECRET_KEY')\n# SECURITY WARNING: don't run with debug turned on in production!\n# DEBUG = True if os.getenv('DEBUG', 'True') == 'True' else False\nDEBUG = os.getenv('DEBUG', 'True') == 'True'\nALLOWED_HOSTS = os.getenv('ALLOWED_HOSTS').split(',')\nif DEBUG:\n    ALLOWED_HOSTS = []\n# Application definition\nINSTALLED_APPS = [\n    'django.contrib.admin',",
         "detail": "project.settings",
         "documentation": {}
     },
@@ -258,7 +282,16 @@
         "kind": 5,
         "importPath": "project.settings",
         "description": "project.settings",
-        "peekOfCode": "DEBUG = os.getenv('DEBUG', 'True')=='True'\nALLOWED_HOSTS=os.getenv('ALLOWED_HOSTS').split(',')\nif DEBUG:\n    ALLOWED_HOSTS = []\n# Application definition\nINSTALLED_APPS = [\n    'django.contrib.admin',\n    'django.contrib.auth',\n    'django.contrib.contenttypes',\n    'django.contrib.sessions',",
+        "peekOfCode": "DEBUG = os.getenv('DEBUG', 'True') == 'True'\nALLOWED_HOSTS = os.getenv('ALLOWED_HOSTS').split(',')\nif DEBUG:\n    ALLOWED_HOSTS = []\n# Application definition\nINSTALLED_APPS = [\n    'django.contrib.admin',\n    'django.contrib.auth',\n    'django.contrib.contenttypes',\n    'django.contrib.sessions',",
+        "detail": "project.settings",
+        "documentation": {}
+    },
+    {
+        "label": "ALLOWED_HOSTS",
+        "kind": 5,
+        "importPath": "project.settings",
+        "description": "project.settings",
+        "peekOfCode": "ALLOWED_HOSTS = os.getenv('ALLOWED_HOSTS').split(',')\nif DEBUG:\n    ALLOWED_HOSTS = []\n# Application definition\nINSTALLED_APPS = [\n    'django.contrib.admin',\n    'django.contrib.auth',\n    'django.contrib.contenttypes',\n    'django.contrib.sessions',\n    'django.contrib.messages',",
         "detail": "project.settings",
         "documentation": {}
     },
@@ -276,7 +309,7 @@
         "kind": 5,
         "importPath": "project.settings",
         "description": "project.settings",
-        "peekOfCode": "MIDDLEWARE = [\n    'django.middleware.security.SecurityMiddleware',\n    'django.contrib.sessions.middleware.SessionMiddleware',\n    'django.middleware.common.CommonMiddleware',\n    'django.middleware.csrf.CsrfViewMiddleware',\n    'django.contrib.auth.middleware.AuthenticationMiddleware',\n    'django.contrib.messages.middleware.MessageMiddleware',\n    'django.middleware.clickjacking.XFrameOptionsMiddleware',\n]\nROOT_URLCONF = 'project.urls'",
+        "peekOfCode": "MIDDLEWARE = [\n    'django.middleware.security.SecurityMiddleware',\n    'django.contrib.sessions.middleware.SessionMiddleware',\n    \"debug_toolbar.middleware.DebugToolbarMiddleware\",\n    'django.middleware.common.CommonMiddleware',\n    'django.middleware.csrf.CsrfViewMiddleware',\n    'django.contrib.auth.middleware.AuthenticationMiddleware',\n    'django.contrib.messages.middleware.MessageMiddleware',\n    'django.middleware.clickjacking.XFrameOptionsMiddleware',\n]",
         "detail": "project.settings",
         "documentation": {}
     },
@@ -285,7 +318,7 @@
         "kind": 5,
         "importPath": "project.settings",
         "description": "project.settings",
-        "peekOfCode": "ROOT_URLCONF = 'project.urls'\nTEMPLATES = [\n    {\n        'BACKEND': 'django.template.backends.django.DjangoTemplates',\n        'DIRS': [],\n        'APP_DIRS': True,\n        'OPTIONS': {\n            'context_processors': [\n                'django.template.context_processors.debug',\n                'django.template.context_processors.request',",
+        "peekOfCode": "ROOT_URLCONF = 'project.urls'\n# REST_FRAMEWORK = {\n#     'DEFAULT_PAGINATION_CLASS': 'rest_framework.pagination.PageNumberPagination',\n#     'PAGE_SIZE': 10\n# }\nTEMPLATES = [\n    {\n        'BACKEND': 'django.template.backends.django.DjangoTemplates',\n        'DIRS': [],\n        'APP_DIRS': True,",
         "detail": "project.settings",
         "documentation": {}
     },
@@ -299,11 +332,20 @@
         "documentation": {}
     },
     {
+        "label": "INTERNAL_IPS",
+        "kind": 5,
+        "importPath": "project.settings",
+        "description": "project.settings",
+        "peekOfCode": "INTERNAL_IPS = [\n    # ...\n    \"127.0.0.1\",\n    # ...\n]\nWSGI_APPLICATION = 'project.wsgi.application'\n# Database\n# https://docs.djangoproject.com/en/5.0/ref/settings/#databases\nDATABASES = {\n    'default': {",
+        "detail": "project.settings",
+        "documentation": {}
+    },
+    {
         "label": "WSGI_APPLICATION",
         "kind": 5,
         "importPath": "project.settings",
         "description": "project.settings",
-        "peekOfCode": "WSGI_APPLICATION = 'project.wsgi.application'\n# Database\n# https://docs.djangoproject.com/en/5.0/ref/settings/#databases\nDATABASES = {\n    'default': {\n        'ENGINE': 'django.db.backends.mysql',\n        'NAME': 'storedb',\n        'USER': 'root',\n        'PASSWORD': '',\n        'HOST':'localhost',",
+        "peekOfCode": "WSGI_APPLICATION = 'project.wsgi.application'\n# Database\n# https://docs.djangoproject.com/en/5.0/ref/settings/#databases\nDATABASES = {\n    'default': {\n        'ENGINE': 'django.db.backends.mysql',\n        'NAME': 'storedb',\n        'USER': 'root',\n        'PASSWORD': '',\n        'HOST': 'localhost',",
         "detail": "project.settings",
         "documentation": {}
     },
@@ -312,7 +354,7 @@
         "kind": 5,
         "importPath": "project.settings",
         "description": "project.settings",
-        "peekOfCode": "DATABASES = {\n    'default': {\n        'ENGINE': 'django.db.backends.mysql',\n        'NAME': 'storedb',\n        'USER': 'root',\n        'PASSWORD': '',\n        'HOST':'localhost',\n        'PORT':'3306',\n    }\n}",
+        "peekOfCode": "DATABASES = {\n    'default': {\n        'ENGINE': 'django.db.backends.mysql',\n        'NAME': 'storedb',\n        'USER': 'root',\n        'PASSWORD': '',\n        'HOST': 'localhost',\n        'PORT': '3306',\n    }\n}",
         "detail": "project.settings",
         "documentation": {}
     },
@@ -380,11 +422,20 @@
         "documentation": {}
     },
     {
+        "label": "schema_view",
+        "kind": 5,
+        "importPath": "project.urls",
+        "description": "project.urls",
+        "peekOfCode": "schema_view = get_schema_view(\n    openapi.Info(\n        title=\"Store API\",\n        default_version='v1',\n        description=\"Test description\",\n        terms_of_service=\"https://www.google.com/policies/terms/\",\n        contact=openapi.Contact(email=\"contact@snippets.local\"),\n        license=openapi.License(name=\"BSD License\"),\n    ),\n    public=True,",
+        "detail": "project.urls",
+        "documentation": {}
+    },
+    {
         "label": "urlpatterns",
         "kind": 5,
         "importPath": "project.urls",
         "description": "project.urls",
-        "peekOfCode": "urlpatterns = [\n    path('admin/', admin.site.urls),\n    path('api/', include('store.urls')),\n]",
+        "peekOfCode": "urlpatterns = [\n    path('admin/', admin.site.urls),\n    path(\"__debug__/\", include(\"debug_toolbar.urls\")),\n    path('api/', include('store.urls')),\n    path('swagger<format>/', schema_view.without_ui(cache_timeout=0),\n         name='schema-json'),\n    path('swagger/', schema_view.with_ui('swagger',\n         cache_timeout=0), name='schema-swagger-ui'),\n    path('redoc/', schema_view.with_ui('redoc',\n         cache_timeout=0), name='schema-redoc'),",
         "detail": "project.urls",
         "documentation": {}
     },
@@ -479,11 +530,20 @@
         "documentation": {}
     },
     {
+        "label": "ProductFilterSet",
+        "kind": 6,
+        "importPath": "store.filters",
+        "description": "store.filters",
+        "peekOfCode": "class ProductFilterSet(filters.FilterSet):\n    class Meta:\n        model = Product\n        fields = {\n            \"category\": [\"exact\"],\n            \"price\": [\"gte\", \"lte\"],\n        }",
+        "detail": "store.filters",
+        "documentation": {}
+    },
+    {
         "label": "SharedModel",
         "kind": 6,
         "importPath": "store.models",
         "description": "store.models",
-        "peekOfCode": "class SharedModel(models.Model):\n    created_at=models.DateTimeField(auto_now_add=True)\n    updated_at=models.DateTimeField(auto_now=True)\n    class Meta:\n        abstract = True\n# Create your models here.\nclass Category(SharedModel):\n    name = models.CharField(max_length=50)\n    def __str__(self):\n        return self.name",
+        "peekOfCode": "class SharedModel(models.Model):\n    created_at = models.DateTimeField(auto_now_add=True)\n    updated_at = models.DateTimeField(auto_now=True)\n    class Meta:\n        abstract = True\n# Create your models here.\nclass Category(SharedModel):\n    name = models.CharField(max_length=50)\n    def __str__(self):\n        return self.name",
         "detail": "store.models",
         "documentation": {}
     },
@@ -492,7 +552,7 @@
         "kind": 6,
         "importPath": "store.models",
         "description": "store.models",
-        "peekOfCode": "class Category(SharedModel):\n    name = models.CharField(max_length=50)\n    def __str__(self):\n        return self.name\nclass Product(SharedModel):\n    name = models.CharField(max_length=50)\n    price=models.PositiveIntegerField()\n    qty=models.PositiveIntegerField()\n    category=models.ForeignKey(Category,on_delete=models.CASCADE)\n    def __str__(self):",
+        "peekOfCode": "class Category(SharedModel):\n    name = models.CharField(max_length=50)\n    def __str__(self):\n        return self.name\nclass Product(SharedModel):\n    name = models.CharField(max_length=50)\n    price = models.PositiveIntegerField()\n    qty = models.PositiveIntegerField()\n    category = models.ForeignKey(Category, on_delete=models.CASCADE)\n    def __str__(self):",
         "detail": "store.models",
         "documentation": {}
     },
@@ -501,7 +561,7 @@
         "kind": 6,
         "importPath": "store.models",
         "description": "store.models",
-        "peekOfCode": "class Product(SharedModel):\n    name = models.CharField(max_length=50)\n    price=models.PositiveIntegerField()\n    qty=models.PositiveIntegerField()\n    category=models.ForeignKey(Category,on_delete=models.CASCADE)\n    def __str__(self):\n        return f\"{self.name} (price{self.price})\"\nclass Customer(SharedModel):\n    first_name=models.CharField(max_length=50)\n    middle_name=models.CharField(max_length=50,null=True,blank=True)",
+        "peekOfCode": "class Product(SharedModel):\n    name = models.CharField(max_length=50)\n    price = models.PositiveIntegerField()\n    qty = models.PositiveIntegerField()\n    category = models.ForeignKey(Category, on_delete=models.CASCADE)\n    def __str__(self):\n        return f\"{self.name} (price{self.price})\"\nclass Customer(SharedModel):\n    first_name = models.CharField(max_length=50)\n    middle_name = models.CharField(max_length=50, null=True, blank=True)",
         "detail": "store.models",
         "documentation": {}
     },
@@ -510,7 +570,7 @@
         "kind": 6,
         "importPath": "store.models",
         "description": "store.models",
-        "peekOfCode": "class Customer(SharedModel):\n    first_name=models.CharField(max_length=50)\n    middle_name=models.CharField(max_length=50,null=True,blank=True)\n    last_name=models.CharField(max_length=50)\n    contact=models.CharField(max_length=10)\n    address=models.CharField(max_length=50)\n    user=models.ForeignKey(User, on_delete=models.CASCADE)\n    def __str__(self):\n        return f\"{self.first_name} {self.middle_name} {self.last_name} {self.address}\"\nclass Cart(SharedModel):",
+        "peekOfCode": "class Customer(SharedModel):\n    first_name = models.CharField(max_length=50)\n    middle_name = models.CharField(max_length=50, null=True, blank=True)\n    last_name = models.CharField(max_length=50)\n    contact = models.CharField(max_length=10)\n    address = models.CharField(max_length=50)\n    user = models.ForeignKey(User, on_delete=models.CASCADE)\n    def __str__(self):\n        return f\" {self.first_name} {self.middle_name} {self.last_name} {self.address}\"\nclass Cart(SharedModel):",
         "detail": "store.models",
         "documentation": {}
     },
@@ -519,7 +579,7 @@
         "kind": 6,
         "importPath": "store.models",
         "description": "store.models",
-        "peekOfCode": "class Cart(SharedModel):\n    customer=models.ForeignKey(Customer,on_delete=models.CASCADE)\n    def __str__(self):\n        return f\"cart of {self.customer} \"\nclass CartItem(SharedModel):\n    cart=models.ForeignKey(Cart,on_delete=models.CASCADE)\n    product=models.ForeignKey(Product,on_delete=models.CASCADE)\n    qty=models.PositiveIntegerField()\n    def __str__(self):\n        return self.product",
+        "peekOfCode": "class Cart(SharedModel):\n    customer = models.ForeignKey(Customer, on_delete=models.CASCADE)\n    def __str__(self):\n        return f\"cart of {self.customer} \"\nclass CartItem(SharedModel):\n    cart = models.ForeignKey(Cart, on_delete=models.CASCADE)\n    product = models.ForeignKey(Product, on_delete=models.CASCADE)\n    qty = models.PositiveIntegerField()\n    def __str__(self):\n        return self.product",
         "detail": "store.models",
         "documentation": {}
     },
@@ -528,7 +588,7 @@
         "kind": 6,
         "importPath": "store.models",
         "description": "store.models",
-        "peekOfCode": "class CartItem(SharedModel):\n    cart=models.ForeignKey(Cart,on_delete=models.CASCADE)\n    product=models.ForeignKey(Product,on_delete=models.CASCADE)\n    qty=models.PositiveIntegerField()\n    def __str__(self):\n        return self.product\n    def __str__(self):\n        return f\"cart of {self.cart.customer} ({self.product}) \"\nclass Order(SharedModel):\n    ORDER_PENDING_CHOICE=\"PENDING\"",
+        "peekOfCode": "class CartItem(SharedModel):\n    cart = models.ForeignKey(Cart, on_delete=models.CASCADE)\n    product = models.ForeignKey(Product, on_delete=models.CASCADE)\n    qty = models.PositiveIntegerField()\n    def __str__(self):\n        return self.product\n    def __str__(self):\n        return f\"cart of {self.cart.customer} ({self.product}) \"\nclass Order(SharedModel):\n    ORDER_PENDING_CHOICE = \"PENDING\"",
         "detail": "store.models",
         "documentation": {}
     },
@@ -537,7 +597,7 @@
         "kind": 6,
         "importPath": "store.models",
         "description": "store.models",
-        "peekOfCode": "class Order(SharedModel):\n    ORDER_PENDING_CHOICE=\"PENDING\"\n    ORDER_INDELIVERY_CHOICE=\"INDELIVERY\"\n    ORDER_COMPLETED_CHOICE=\"COMPLETED\"\n    ORDER_STATUS=[\n        (ORDER_PENDING_CHOICE,'PENDING'),\n        (ORDER_INDELIVERY_CHOICE,'INDELIVERY'),\n        (ORDER_COMPLETED_CHOICE,'COMPLETED'),\n    ]\n    PAYMENT_MODE_KHALTI=\"KHALTI\"",
+        "peekOfCode": "class Order(SharedModel):\n    ORDER_PENDING_CHOICE = \"PENDING\"\n    ORDER_INDELIVERY_CHOICE = \"INDELIVERY\"\n    ORDER_COMPLETED_CHOICE = \"COMPLETED\"\n    ORDER_STATUS = [\n        (ORDER_PENDING_CHOICE, 'PENDING'),\n        (ORDER_INDELIVERY_CHOICE, 'INDELIVERY'),\n        (ORDER_COMPLETED_CHOICE, 'COMPLETED'),\n    ]\n    PAYMENT_MODE_KHALTI = \"KHALTI\"",
         "detail": "store.models",
         "documentation": {}
     },
@@ -546,8 +606,26 @@
         "kind": 6,
         "importPath": "store.models",
         "description": "store.models",
-        "peekOfCode": "class OrderItem(SharedModel):\n    order=models.ForeignKey(Order,on_delete=models.PROTECT)\n    product=models.ForeignKey(Product,on_delete=models.CASCADE)\n    qty=models.PositiveIntegerField()\n    price=models.PositiveIntegerField()\n    def __str__(self):\n        return self.product",
+        "peekOfCode": "class OrderItem(SharedModel):\n    order = models.ForeignKey(Order, on_delete=models.PROTECT)\n    product = models.ForeignKey(Product, on_delete=models.CASCADE)\n    qty = models.PositiveIntegerField()\n    price = models.PositiveIntegerField()\n    def __str__(self):\n        return self.product",
         "detail": "store.models",
+        "documentation": {}
+    },
+    {
+        "label": "User",
+        "kind": 5,
+        "importPath": "store.models",
+        "description": "store.models",
+        "peekOfCode": "User = get_user_model()\nclass SharedModel(models.Model):\n    created_at = models.DateTimeField(auto_now_add=True)\n    updated_at = models.DateTimeField(auto_now=True)\n    class Meta:\n        abstract = True\n# Create your models here.\nclass Category(SharedModel):\n    name = models.CharField(max_length=50)\n    def __str__(self):",
+        "detail": "store.models",
+        "documentation": {}
+    },
+    {
+        "label": "ProductPagination",
+        "kind": 6,
+        "importPath": "store.paginations",
+        "description": "store.paginations",
+        "peekOfCode": "class ProductPagination(PageNumberPagination):\n    page_size = 10\n    page_size_query_param = \"size\"",
+        "detail": "store.paginations",
         "documentation": {}
     },
     {
@@ -555,8 +633,26 @@
         "kind": 6,
         "importPath": "store.serializers",
         "description": "store.serializers",
-        "peekOfCode": "class CategorySerializer(serializers.ModelSerializer):\n    class Meta:\n        model = Category\n        fields = \"__all__\"",
+        "peekOfCode": "class CategorySerializer(serializers.ModelSerializer):\n    class Meta:\n        model = Category\n        fields = [\n            \"id\",\n            \"name\",\n            \"created_at\",\n            \"updated_at\"\n        ]\n        # fields = \"__all__\"",
         "detail": "store.serializers",
+        "documentation": {}
+    },
+    {
+        "label": "ProductSerializer",
+        "kind": 6,
+        "importPath": "store.serializers",
+        "description": "store.serializers",
+        "peekOfCode": "class ProductSerializer(serializers.ModelSerializer):\n    category = serializers.StringRelatedField()\n    category_id = serializers.PrimaryKeyRelatedField(\n        queryset=Category.objects.all()\n    )\n    price_with_tax = serializers.SerializerMethodField()\n    class Meta:\n        model = Product\n        fields = [\n            \"id\",",
+        "detail": "store.serializers",
+        "documentation": {}
+    },
+    {
+        "label": "router",
+        "kind": 5,
+        "importPath": "store.urls",
+        "description": "store.urls",
+        "peekOfCode": "router = routers.SimpleRouter()\nrouter.register('categories', CategoryViewSet)\nrouter.register('products', ProductViewSet)\n# using router\nurlpatterns = [\n]+router.urls\n# using viewset\n\"\"\" urlpatterns = [\n    path('categories/', CategoryViewSet.as_view(\n        {",
+        "detail": "store.urls",
         "documentation": {}
     },
     {
@@ -564,25 +660,52 @@
         "kind": 5,
         "importPath": "store.urls",
         "description": "store.urls",
-        "peekOfCode": "urlpatterns = [\n    path('categories/', CategoryList.as_view()),\n    # path('categories/', category_list, name='category-list'),\n    path('categories/<pk>', category_detail, name='category-detail'),\n]",
+        "peekOfCode": "urlpatterns = [\n]+router.urls\n# using viewset\n\"\"\" urlpatterns = [\n    path('categories/', CategoryViewSet.as_view(\n        {\n            'get': 'list',\n            'post': 'create',\n        }\n    )",
         "detail": "store.urls",
         "documentation": {}
     },
     {
-        "label": "CategoryList",
+        "label": "CategoryDetail",
         "kind": 6,
         "importPath": "store.views",
         "description": "store.views",
-        "peekOfCode": "class CategoryList(APIView):\n    def get(self, request):\n        if request.method == 'GET':\n            categories = Category.objects.all()\n            serializer = CategorySerializer(categories, many=True)\n            return Response(serializer.data)\n    def post(self, request):\n        serializer = CategorySerializer(data=request.data)\n        serializer.is_valid(raise_exception=True)\n        serializer.save()",
+        "peekOfCode": "class CategoryDetail(APIView):\n    def get(self, request, pk):\n        category = get_object_or_404(Category, pk=pk)\n        serializer = CategorySerializer(category)\n        return Response(serializer.data)\n    def put(self, request, pk):\n        category = get_object_or_404(Category, pk=pk)\n        serializer = CategorySerializer(category, data=request.data)\n        serializer.is_valid(raise_exception=True)\n        serializer.save()",
         "detail": "store.views",
         "documentation": {}
     },
     {
-        "label": "category_detail",
-        "kind": 2,
+        "label": "CategoryDetail",
+        "kind": 6,
         "importPath": "store.views",
         "description": "store.views",
-        "peekOfCode": "def category_detail(request, pk):\n    method = request.method\n    category = get_object_or_404(Category, pk=pk)\n    if method == \"GET\":\n        serializer = CategorySerializer(category)\n        return Response(serializer.data)\n    elif method == \"PUT\":\n        serializer = CategorySerializer(category, data=request.data)\n        serializer.is_valid(raise_exception=True)\n        serializer.save()",
+        "peekOfCode": "class CategoryDetail(\n        mixins.RetrieveModelMixin,\n        mixins.UpdateModelMixin,\n        mixins.DestroyModelMixin,\n        generics.GenericAPIView\n):\n    queryset = Category.objects.all()\n    serializer_class = CategorySerializer\n    def get(self, request, pk):\n        return self.retrieve(request, pk)",
+        "detail": "store.views",
+        "documentation": {}
+    },
+    {
+        "label": "CategoryDetail",
+        "kind": 6,
+        "importPath": "store.views",
+        "description": "store.views",
+        "peekOfCode": "class CategoryDetail(\n        generics.RetrieveUpdateDestroyAPIView\n):\n    queryset = Category.objects.all()\n    serializer_class = CategorySerializer \"\"\"\n# using viewset\nclass CategoryViewSet(ModelViewSet):\n    queryset = Category.objects.all()\n    serializer_class = CategorySerializer\nclass ProductViewSet(ModelViewSet):",
+        "detail": "store.views",
+        "documentation": {}
+    },
+    {
+        "label": "CategoryViewSet",
+        "kind": 6,
+        "importPath": "store.views",
+        "description": "store.views",
+        "peekOfCode": "class CategoryViewSet(ModelViewSet):\n    queryset = Category.objects.all()\n    serializer_class = CategorySerializer\nclass ProductViewSet(ModelViewSet):\n    queryset = Product.objects.select_related('category').all()\n    serializer_class = ProductSerializer\n    pagination_class = ProductPagination\n    filter_backends = (filters.DjangoFilterBackend,)\n    filterset_class = ProductFilterSet\n    # filterset_fields = ('category_id',)",
+        "detail": "store.views",
+        "documentation": {}
+    },
+    {
+        "label": "ProductViewSet",
+        "kind": 6,
+        "importPath": "store.views",
+        "description": "store.views",
+        "peekOfCode": "class ProductViewSet(ModelViewSet):\n    queryset = Product.objects.select_related('category').all()\n    serializer_class = ProductSerializer\n    pagination_class = ProductPagination\n    filter_backends = (filters.DjangoFilterBackend,)\n    filterset_class = ProductFilterSet\n    # filterset_fields = ('category_id',)",
         "detail": "store.views",
         "documentation": {}
     },
