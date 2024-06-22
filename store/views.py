@@ -10,6 +10,7 @@ from .serializers import CategorySerializer, ProductSerializer
 
 from rest_framework.viewsets import ModelViewSet
 from django_filters import rest_framework as filters
+from rest_framework.filters import SearchFilter
 
 # Create your views here.
 # using api view
@@ -156,6 +157,7 @@ class ProductViewSet(ModelViewSet):
     queryset = Product.objects.select_related('category').all()
     serializer_class = ProductSerializer
     pagination_class = ProductPagination
-    filter_backends = (filters.DjangoFilterBackend,)
+    filter_backends = (filters.DjangoFilterBackend, SearchFilter)
     filterset_class = ProductFilterSet
     # filterset_fields = ('category_id',)
+    search_fields = ('name',)

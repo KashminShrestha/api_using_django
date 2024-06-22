@@ -50,10 +50,12 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'rest_framework',
     'django_seed',
-    'store',
     'drf_yasg',
     "debug_toolbar",
     'django_filters',
+    'rest_framework.authtoken',
+    'store',
+    'core',
 ]
 
 MIDDLEWARE = [
