@@ -1,5 +1,88 @@
 [
     {
+        "label": "django.contrib.auth.models",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "django.contrib.auth.models",
+        "description": "django.contrib.auth.models",
+        "detail": "django.contrib.auth.models",
+        "documentation": {}
+    },
+    {
+        "label": "AbstractUser",
+        "importPath": "django.contrib.auth.models",
+        "description": "django.contrib.auth.models",
+        "isExtraImport": true,
+        "detail": "django.contrib.auth.models",
+        "documentation": {}
+    },
+    {
+        "label": "django.contrib.auth.validators",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "django.contrib.auth.validators",
+        "description": "django.contrib.auth.validators",
+        "detail": "django.contrib.auth.validators",
+        "documentation": {}
+    },
+    {
+        "label": "django.utils.timezone",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "django.utils.timezone",
+        "description": "django.utils.timezone",
+        "detail": "django.utils.timezone",
+        "documentation": {}
+    },
+    {
+        "label": "migrations",
+        "importPath": "django.db",
+        "description": "django.db",
+        "isExtraImport": true,
+        "detail": "django.db",
+        "documentation": {}
+    },
+    {
+        "label": "models",
+        "importPath": "django.db",
+        "description": "django.db",
+        "isExtraImport": true,
+        "detail": "django.db",
+        "documentation": {}
+    },
+    {
+        "label": "models",
+        "importPath": "django.db",
+        "description": "django.db",
+        "isExtraImport": true,
+        "detail": "django.db",
+        "documentation": {}
+    },
+    {
+        "label": "migrations",
+        "importPath": "django.db",
+        "description": "django.db",
+        "isExtraImport": true,
+        "detail": "django.db",
+        "documentation": {}
+    },
+    {
+        "label": "models",
+        "importPath": "django.db",
+        "description": "django.db",
+        "isExtraImport": true,
+        "detail": "django.db",
+        "documentation": {}
+    },
+    {
+        "label": "models",
+        "importPath": "django.db",
+        "description": "django.db",
+        "isExtraImport": true,
+        "detail": "django.db",
+        "documentation": {}
+    },
+    {
         "label": "admin",
         "importPath": "django.contrib",
         "description": "django.contrib",
@@ -37,46 +120,6 @@
         "description": "django.apps",
         "isExtraImport": true,
         "detail": "django.apps",
-        "documentation": {}
-    },
-    {
-        "label": "models",
-        "importPath": "django.db",
-        "description": "django.db",
-        "isExtraImport": true,
-        "detail": "django.db",
-        "documentation": {}
-    },
-    {
-        "label": "migrations",
-        "importPath": "django.db",
-        "description": "django.db",
-        "isExtraImport": true,
-        "detail": "django.db",
-        "documentation": {}
-    },
-    {
-        "label": "models",
-        "importPath": "django.db",
-        "description": "django.db",
-        "isExtraImport": true,
-        "detail": "django.db",
-        "documentation": {}
-    },
-    {
-        "label": "migrations",
-        "importPath": "django.db",
-        "description": "django.db",
-        "isExtraImport": true,
-        "detail": "django.db",
-        "documentation": {}
-    },
-    {
-        "label": "models",
-        "importPath": "django.db",
-        "description": "django.db",
-        "isExtraImport": true,
-        "detail": "django.db",
         "documentation": {}
     },
     {
@@ -411,12 +454,30 @@
         "documentation": {}
     },
     {
+        "label": "Migration",
+        "kind": 6,
+        "importPath": "core.migrations.0001_initial",
+        "description": "core.migrations.0001_initial",
+        "peekOfCode": "class Migration(migrations.Migration):\n    initial = True\n    dependencies = [\n        ('auth', '0012_alter_user_first_name_max_length'),\n    ]\n    operations = [\n        migrations.CreateModel(\n            name='User',\n            fields=[\n                ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),",
+        "detail": "core.migrations.0001_initial",
+        "documentation": {}
+    },
+    {
         "label": "CoreConfig",
         "kind": 6,
         "importPath": "core.apps",
         "description": "core.apps",
         "peekOfCode": "class CoreConfig(AppConfig):\n    default_auto_field = 'django.db.models.BigAutoField'\n    name = 'core'",
         "detail": "core.apps",
+        "documentation": {}
+    },
+    {
+        "label": "User",
+        "kind": 6,
+        "importPath": "core.models",
+        "description": "core.models",
+        "peekOfCode": "class User(AbstractUser):\n    email=models.EmailField(max_length=255)",
+        "detail": "core.models",
         "documentation": {}
     },
     {
@@ -523,7 +584,7 @@
         "kind": 5,
         "importPath": "project.settings",
         "description": "project.settings",
-        "peekOfCode": "SECRET_KEY = os.getenv('SECRET_KEY')\n# SECURITY WARNING: don't run with debug turned on in production!\n# DEBUG = True if os.getenv('DEBUG', 'True') == 'True' else False\nDEBUG = os.getenv('DEBUG', 'True') == 'True'\nALLOWED_HOSTS = os.getenv('ALLOWED_HOSTS').split(',')\nif DEBUG:\n    ALLOWED_HOSTS = []\n# Application definition\nINSTALLED_APPS = [\n    'django.contrib.admin',",
+        "peekOfCode": "SECRET_KEY = os.getenv('SECRET_KEY')\n# SECURITY WARNING: don't run with debug turned on in production!\n# DEBUG = True if os.getenv('DEBUG', 'True') == 'True' else False\nDEBUG = os.getenv('DEBUG', 'True') == 'True'\nALLOWED_HOSTS = os.getenv('ALLOWED_HOSTS').split(',')\nif DEBUG:\n    ALLOWED_HOSTS = []\n# Application definition\nINSTALLED_APPS = [\n    'core',",
         "detail": "project.settings",
         "documentation": {}
     },
@@ -532,7 +593,7 @@
         "kind": 5,
         "importPath": "project.settings",
         "description": "project.settings",
-        "peekOfCode": "DEBUG = os.getenv('DEBUG', 'True') == 'True'\nALLOWED_HOSTS = os.getenv('ALLOWED_HOSTS').split(',')\nif DEBUG:\n    ALLOWED_HOSTS = []\n# Application definition\nINSTALLED_APPS = [\n    'django.contrib.admin',\n    'django.contrib.auth',\n    'django.contrib.contenttypes',\n    'django.contrib.sessions',",
+        "peekOfCode": "DEBUG = os.getenv('DEBUG', 'True') == 'True'\nALLOWED_HOSTS = os.getenv('ALLOWED_HOSTS').split(',')\nif DEBUG:\n    ALLOWED_HOSTS = []\n# Application definition\nINSTALLED_APPS = [\n    'core',\n    'django.contrib.admin',\n    'django.contrib.auth',\n    'django.contrib.contenttypes',",
         "detail": "project.settings",
         "documentation": {}
     },
@@ -541,7 +602,7 @@
         "kind": 5,
         "importPath": "project.settings",
         "description": "project.settings",
-        "peekOfCode": "ALLOWED_HOSTS = os.getenv('ALLOWED_HOSTS').split(',')\nif DEBUG:\n    ALLOWED_HOSTS = []\n# Application definition\nINSTALLED_APPS = [\n    'django.contrib.admin',\n    'django.contrib.auth',\n    'django.contrib.contenttypes',\n    'django.contrib.sessions',\n    'django.contrib.messages',",
+        "peekOfCode": "ALLOWED_HOSTS = os.getenv('ALLOWED_HOSTS').split(',')\nif DEBUG:\n    ALLOWED_HOSTS = []\n# Application definition\nINSTALLED_APPS = [\n    'core',\n    'django.contrib.admin',\n    'django.contrib.auth',\n    'django.contrib.contenttypes',\n    'django.contrib.sessions',",
         "detail": "project.settings",
         "documentation": {}
     },
@@ -550,7 +611,7 @@
         "kind": 5,
         "importPath": "project.settings",
         "description": "project.settings",
-        "peekOfCode": "INSTALLED_APPS = [\n    'django.contrib.admin',\n    'django.contrib.auth',\n    'django.contrib.contenttypes',\n    'django.contrib.sessions',\n    'django.contrib.messages',\n    'django.contrib.staticfiles',\n    'rest_framework',\n    'django_seed',\n    'drf_yasg',",
+        "peekOfCode": "INSTALLED_APPS = [\n    'core',\n    'django.contrib.admin',\n    'django.contrib.auth',\n    'django.contrib.contenttypes',\n    'django.contrib.sessions',\n    'django.contrib.messages',\n    'django.contrib.staticfiles',\n    'rest_framework',\n    'django_seed',",
         "detail": "project.settings",
         "documentation": {}
     },
@@ -631,7 +692,7 @@
         "kind": 5,
         "importPath": "project.settings",
         "description": "project.settings",
-        "peekOfCode": "TIME_ZONE = 'UTC'\nUSE_I18N = True\nUSE_TZ = True\n# Static files (CSS, JavaScript, Images)\n# https://docs.djangoproject.com/en/5.0/howto/static-files/\nSTATIC_URL = 'static/'\n# Default primary key field type\n# https://docs.djangoproject.com/en/5.0/ref/settings/#default-auto-field\nDEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'",
+        "peekOfCode": "TIME_ZONE = 'UTC'\nUSE_I18N = True\nUSE_TZ = True\n# Static files (CSS, JavaScript, Images)\n# https://docs.djangoproject.com/en/5.0/howto/static-files/\nSTATIC_URL = 'static/'\n# Default primary key field type\n# https://docs.djangoproject.com/en/5.0/ref/settings/#default-auto-field\nDEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'\nAUTH_USER_MODEL = \"core.User\"",
         "detail": "project.settings",
         "documentation": {}
     },
@@ -640,7 +701,7 @@
         "kind": 5,
         "importPath": "project.settings",
         "description": "project.settings",
-        "peekOfCode": "USE_I18N = True\nUSE_TZ = True\n# Static files (CSS, JavaScript, Images)\n# https://docs.djangoproject.com/en/5.0/howto/static-files/\nSTATIC_URL = 'static/'\n# Default primary key field type\n# https://docs.djangoproject.com/en/5.0/ref/settings/#default-auto-field\nDEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'",
+        "peekOfCode": "USE_I18N = True\nUSE_TZ = True\n# Static files (CSS, JavaScript, Images)\n# https://docs.djangoproject.com/en/5.0/howto/static-files/\nSTATIC_URL = 'static/'\n# Default primary key field type\n# https://docs.djangoproject.com/en/5.0/ref/settings/#default-auto-field\nDEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'\nAUTH_USER_MODEL = \"core.User\"",
         "detail": "project.settings",
         "documentation": {}
     },
@@ -649,7 +710,7 @@
         "kind": 5,
         "importPath": "project.settings",
         "description": "project.settings",
-        "peekOfCode": "USE_TZ = True\n# Static files (CSS, JavaScript, Images)\n# https://docs.djangoproject.com/en/5.0/howto/static-files/\nSTATIC_URL = 'static/'\n# Default primary key field type\n# https://docs.djangoproject.com/en/5.0/ref/settings/#default-auto-field\nDEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'",
+        "peekOfCode": "USE_TZ = True\n# Static files (CSS, JavaScript, Images)\n# https://docs.djangoproject.com/en/5.0/howto/static-files/\nSTATIC_URL = 'static/'\n# Default primary key field type\n# https://docs.djangoproject.com/en/5.0/ref/settings/#default-auto-field\nDEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'\nAUTH_USER_MODEL = \"core.User\"",
         "detail": "project.settings",
         "documentation": {}
     },
@@ -658,7 +719,7 @@
         "kind": 5,
         "importPath": "project.settings",
         "description": "project.settings",
-        "peekOfCode": "STATIC_URL = 'static/'\n# Default primary key field type\n# https://docs.djangoproject.com/en/5.0/ref/settings/#default-auto-field\nDEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'",
+        "peekOfCode": "STATIC_URL = 'static/'\n# Default primary key field type\n# https://docs.djangoproject.com/en/5.0/ref/settings/#default-auto-field\nDEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'\nAUTH_USER_MODEL = \"core.User\"",
         "detail": "project.settings",
         "documentation": {}
     },
@@ -667,7 +728,16 @@
         "kind": 5,
         "importPath": "project.settings",
         "description": "project.settings",
-        "peekOfCode": "DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'",
+        "peekOfCode": "DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'\nAUTH_USER_MODEL = \"core.User\"",
+        "detail": "project.settings",
+        "documentation": {}
+    },
+    {
+        "label": "AUTH_USER_MODEL",
+        "kind": 5,
+        "importPath": "project.settings",
+        "description": "project.settings",
+        "peekOfCode": "AUTH_USER_MODEL = \"core.User\"",
         "detail": "project.settings",
         "documentation": {}
     },
@@ -708,20 +778,11 @@
         "documentation": {}
     },
     {
-        "label": "Migration",
-        "kind": 6,
-        "importPath": "store.migrations.0002_rename_category_product_category",
-        "description": "store.migrations.0002_rename_category_product_category",
-        "peekOfCode": "class Migration(migrations.Migration):\n    dependencies = [\n        ('store', '0001_initial'),\n    ]\n    operations = [\n        migrations.RenameField(\n            model_name='product',\n            old_name='Category',\n            new_name='category',\n        ),",
-        "detail": "store.migrations.0002_rename_category_product_category",
-        "documentation": {}
-    },
-    {
         "label": "CategoryAdmin",
         "kind": 6,
         "importPath": "store.admin",
         "description": "store.admin",
-        "peekOfCode": "class CategoryAdmin(admin.ModelAdmin):  \n    list_display = ['name']\n    search_fields=['name']\n    list_per_page=20\n@admin.register(Product)\nclass ProductAdmin(admin.ModelAdmin):\n    list_display = ['name', 'price', 'qty', 'category']\n    list_filter=['category']\n    search_fields=['name','category']\n    autocomplete_fields=['category']",
+        "peekOfCode": "class CategoryAdmin(admin.ModelAdmin):\n    list_display = ['name']\n    search_fields = ['name']\n    list_per_page = 20\n@admin.register(Product)\nclass ProductAdmin(admin.ModelAdmin):\n    list_display = ['name', 'price', 'qty', 'category']\n    list_filter = ['category']\n    search_fields = ['name', 'category']\n    autocomplete_fields = ['category']",
         "detail": "store.admin",
         "documentation": {}
     },
@@ -730,7 +791,7 @@
         "kind": 6,
         "importPath": "store.admin",
         "description": "store.admin",
-        "peekOfCode": "class ProductAdmin(admin.ModelAdmin):\n    list_display = ['name', 'price', 'qty', 'category']\n    list_filter=['category']\n    search_fields=['name','category']\n    autocomplete_fields=['category']\n    list_per_page=20\n@admin.register(Customer)\nclass CustomerAdmin(admin.ModelAdmin):\n    list_display = ['first_name', 'middle_name', 'last_name', 'contact', 'address']\n    list_per_page=20",
+        "peekOfCode": "class ProductAdmin(admin.ModelAdmin):\n    list_display = ['name', 'price', 'qty', 'category']\n    list_filter = ['category']\n    search_fields = ['name', 'category']\n    autocomplete_fields = ['category']\n    list_per_page = 20\n@admin.register(Customer)\nclass CustomerAdmin(admin.ModelAdmin):\n    list_display = ['first_name', 'middle_name',\n                    'last_name', 'contact', 'address']",
         "detail": "store.admin",
         "documentation": {}
     },
@@ -739,7 +800,7 @@
         "kind": 6,
         "importPath": "store.admin",
         "description": "store.admin",
-        "peekOfCode": "class CustomerAdmin(admin.ModelAdmin):\n    list_display = ['first_name', 'middle_name', 'last_name', 'contact', 'address']\n    list_per_page=20\nclass CartItemInline(admin.TabularInline):\n    list_per_page=20\n    model = CartItem\n    extra =2 \n@admin.register(Cart)\nclass CartAdmin(admin.ModelAdmin):\n    list_display = ['customer',]",
+        "peekOfCode": "class CustomerAdmin(admin.ModelAdmin):\n    list_display = ['first_name', 'middle_name',\n                    'last_name', 'contact', 'address']\n    list_per_page = 20\nclass CartItemInline(admin.TabularInline):\n    list_per_page = 20\n    model = CartItem\n    extra = 2\n@admin.register(Cart)\nclass CartAdmin(admin.ModelAdmin):",
         "detail": "store.admin",
         "documentation": {}
     },
@@ -748,7 +809,7 @@
         "kind": 6,
         "importPath": "store.admin",
         "description": "store.admin",
-        "peekOfCode": "class CartItemInline(admin.TabularInline):\n    list_per_page=20\n    model = CartItem\n    extra =2 \n@admin.register(Cart)\nclass CartAdmin(admin.ModelAdmin):\n    list_display = ['customer',]\n    list_per_page=20\n    inlines = (CartItemInline,)\n@admin.register(Order)",
+        "peekOfCode": "class CartItemInline(admin.TabularInline):\n    list_per_page = 20\n    model = CartItem\n    extra = 2\n@admin.register(Cart)\nclass CartAdmin(admin.ModelAdmin):\n    list_display = ['customer',]\n    list_per_page = 20\n    inlines = (CartItemInline,)\n@admin.register(Order)",
         "detail": "store.admin",
         "documentation": {}
     },
@@ -757,7 +818,7 @@
         "kind": 6,
         "importPath": "store.admin",
         "description": "store.admin",
-        "peekOfCode": "class CartAdmin(admin.ModelAdmin):\n    list_display = ['customer',]\n    list_per_page=20\n    inlines = (CartItemInline,)\n@admin.register(Order)\nclass OrderAdmin(admin.ModelAdmin):\n    list_display = ['customer','address','payment_status','payment_mode','status']\n    list_editable = ['status']\n    list_filter=['status','payment_mode','payment_status']\n    list_per_page=20",
+        "peekOfCode": "class CartAdmin(admin.ModelAdmin):\n    list_display = ['customer',]\n    list_per_page = 20\n    inlines = (CartItemInline,)\n@admin.register(Order)\nclass OrderAdmin(admin.ModelAdmin):\n    list_display = ['customer', 'address',\n                    'payment_status', 'payment_mode', 'status']\n    list_editable = ['status']\n    list_filter = ['status', 'payment_mode', 'payment_status']",
         "detail": "store.admin",
         "documentation": {}
     },
@@ -766,7 +827,7 @@
         "kind": 6,
         "importPath": "store.admin",
         "description": "store.admin",
-        "peekOfCode": "class OrderAdmin(admin.ModelAdmin):\n    list_display = ['customer','address','payment_status','payment_mode','status']\n    list_editable = ['status']\n    list_filter=['status','payment_mode','payment_status']\n    list_per_page=20",
+        "peekOfCode": "class OrderAdmin(admin.ModelAdmin):\n    list_display = ['customer', 'address',\n                    'payment_status', 'payment_mode', 'status']\n    list_editable = ['status']\n    list_filter = ['status', 'payment_mode', 'payment_status']\n    list_per_page = 20",
         "detail": "store.admin",
         "documentation": {}
     },
