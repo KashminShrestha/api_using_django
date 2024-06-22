@@ -160,11 +160,11 @@
         "documentation": {}
     },
     {
-        "label": "TestCase",
-        "importPath": "django.test",
-        "description": "django.test",
+        "label": "get_user_model",
+        "importPath": "django.contrib.auth",
+        "description": "django.contrib.auth",
         "isExtraImport": true,
-        "detail": "django.test",
+        "detail": "django.contrib.auth",
         "documentation": {}
     },
     {
@@ -176,39 +176,15 @@
         "documentation": {}
     },
     {
-        "label": "path",
-        "importPath": "django.urls",
-        "description": "django.urls",
+        "label": "TestCase",
+        "importPath": "django.test",
+        "description": "django.test",
         "isExtraImport": true,
-        "detail": "django.urls",
+        "detail": "django.test",
         "documentation": {}
     },
     {
-        "label": "path",
-        "importPath": "django.urls",
-        "description": "django.urls",
-        "isExtraImport": true,
-        "detail": "django.urls",
-        "documentation": {}
-    },
-    {
-        "label": "include",
-        "importPath": "django.urls",
-        "description": "django.urls",
-        "isExtraImport": true,
-        "detail": "django.urls",
-        "documentation": {}
-    },
-    {
-        "label": "login",
-        "importPath": "core.views",
-        "description": "core.views",
-        "isExtraImport": true,
-        "detail": "core.views",
-        "documentation": {}
-    },
-    {
-        "label": "register",
+        "label": "UserViewSet",
         "importPath": "core.views",
         "description": "core.views",
         "isExtraImport": true,
@@ -240,7 +216,31 @@
         "documentation": {}
     },
     {
-        "label": "api_view",
+        "label": "Token",
+        "importPath": "rest_framework.authtoken.models",
+        "description": "rest_framework.authtoken.models",
+        "isExtraImport": true,
+        "detail": "rest_framework.authtoken.models",
+        "documentation": {}
+    },
+    {
+        "label": "ViewSet",
+        "importPath": "rest_framework.viewsets",
+        "description": "rest_framework.viewsets",
+        "isExtraImport": true,
+        "detail": "rest_framework.viewsets",
+        "documentation": {}
+    },
+    {
+        "label": "ModelViewSet",
+        "importPath": "rest_framework.viewsets",
+        "description": "rest_framework.viewsets",
+        "isExtraImport": true,
+        "detail": "rest_framework.viewsets",
+        "documentation": {}
+    },
+    {
+        "label": "action",
         "importPath": "rest_framework.decorators",
         "description": "rest_framework.decorators",
         "isExtraImport": true,
@@ -248,11 +248,11 @@
         "documentation": {}
     },
     {
-        "label": "Token",
-        "importPath": "rest_framework.authtoken.models",
-        "description": "rest_framework.authtoken.models",
+        "label": "swagger_auto_schema",
+        "importPath": "drf_yasg.utils",
+        "description": "drf_yasg.utils",
         "isExtraImport": true,
-        "detail": "rest_framework.authtoken.models",
+        "detail": "drf_yasg.utils",
         "documentation": {}
     },
     {
@@ -286,6 +286,22 @@
         "description": "dotenv",
         "isExtraImport": true,
         "detail": "dotenv",
+        "documentation": {}
+    },
+    {
+        "label": "path",
+        "importPath": "django.urls",
+        "description": "django.urls",
+        "isExtraImport": true,
+        "detail": "django.urls",
+        "documentation": {}
+    },
+    {
+        "label": "include",
+        "importPath": "django.urls",
+        "description": "django.urls",
+        "isExtraImport": true,
+        "detail": "django.urls",
         "documentation": {}
     },
     {
@@ -378,14 +394,6 @@
         "documentation": {}
     },
     {
-        "label": "ModelViewSet",
-        "importPath": "rest_framework.viewsets",
-        "description": "rest_framework.viewsets",
-        "isExtraImport": true,
-        "detail": "rest_framework.viewsets",
-        "documentation": {}
-    },
-    {
         "label": "SearchFilter",
         "importPath": "rest_framework.filters",
         "description": "rest_framework.filters",
@@ -443,7 +451,7 @@
         "kind": 5,
         "importPath": "core.urls",
         "description": "core.urls",
-        "peekOfCode": "router = routers.SimpleRouter()\n# using router\nurlpatterns = [\n    path('login', login),\n    path('register', register),\n]+router.urls",
+        "peekOfCode": "router = routers.SimpleRouter()\nrouter.register(\"user\", UserViewSet)\n# using router\nurlpatterns = [\n]+router.urls\n# urlpatterns = [\n#     path('login', login),\n#     path('register', register),\n# ]+router.urls",
         "detail": "core.urls",
         "documentation": {}
     },
@@ -452,8 +460,17 @@
         "kind": 5,
         "importPath": "core.urls",
         "description": "core.urls",
-        "peekOfCode": "urlpatterns = [\n    path('login', login),\n    path('register', register),\n]+router.urls",
+        "peekOfCode": "urlpatterns = [\n]+router.urls\n# urlpatterns = [\n#     path('login', login),\n#     path('register', register),\n# ]+router.urls",
         "detail": "core.urls",
+        "documentation": {}
+    },
+    {
+        "label": "UserViewSet",
+        "kind": 6,
+        "importPath": "core.views",
+        "description": "core.views",
+        "peekOfCode": "class UserViewSet(ViewSet):\n    queryset = User.objects.all()\n    @swagger_auto_schema(\n        request_body=UserSerializer,\n        method=\"POST\",\n    )\n    @action(detail=False, methods=[\"POST\"])\n    def login(self, request):\n        if request.method == \"POST\":\n            serializer = UserSerializer(data=request.data)",
+        "detail": "core.views",
         "documentation": {}
     },
     {
@@ -471,6 +488,15 @@
         "importPath": "core.views",
         "description": "core.views",
         "peekOfCode": "def register(request):\n    serializer = UserCreateSerializer(data=request.data)\n    serializer.is_valid(raise_exception=True)\n    serializer.save()\n    return Response(\n        {\n            \"message\": \"User Created Successfully\",\n        },\n        status=status.HTTP_201_CREATED,\n    )",
+        "detail": "core.views",
+        "documentation": {}
+    },
+    {
+        "label": "User",
+        "kind": 5,
+        "importPath": "core.views",
+        "description": "core.views",
+        "peekOfCode": "User = get_user_model()\n# Create your views here.\n# using Api view decorator\n\"\"\" @api_view(\n    [\n        \"POST\",\n    ]\n)\ndef login(request):\n    if request.method == \"POST\":",
         "detail": "core.views",
         "documentation": {}
     },
