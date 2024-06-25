@@ -15,6 +15,7 @@ from rest_framework.decorators import action
 from drf_yasg.utils import swagger_auto_schema
 from django.contrib.auth import get_user_model
 from django.shortcuts import HttpResponse
+from django.shortcuts import get_object_or_404
 
 
 User = get_user_model()
@@ -133,9 +134,11 @@ class UserViewSet(ViewSet):
     )
     @action(detail=False, methods=["PUT"])
     def verify_otp(self, request):
-        user = User.objects.get(
-            email=request.data["email"],
-        )
+        user = get_object_or_404(User, email=request.data["email"])
+
+        # user = User.objects.get(
+        #     email=request.data["email"],
+        # )
         serializer = OTPVerificationSerializer(
             instance=user,
             data=request.data,
