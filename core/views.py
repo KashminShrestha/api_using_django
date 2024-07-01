@@ -1,9 +1,14 @@
 # from django.shortcuts import render
 from core.serializers import (
     OTPVerificationSerializer,
+    PasswordResetSerializer,
+    PasswordUpdateSerializer,
     UserCreateSerializer,
     UserSerializer,
 )
+from django.core.mail import send_mail
+from random import randint
+
 from rest_framework.response import Response
 
 # from rest_framework.decorators import api_view
@@ -149,6 +154,54 @@ class UserViewSet(ViewSet):
         return Response(
             {
                 "details": "User has been successfully verified",
+            },
+            status=status.HTTP_200_OK,
+        )
+
+    @swagger_auto_schema(
+        request_body=PasswordResetSerializer,
+        method="POST",
+    )
+    @action(detail=False, methods=["POST"])
+    def password_reset(self, request):
+        serializer = PasswordResetSerializer(data=request.data)
+        serializer.is_valid(raise_exception=True)
+        email = serializer.validated_data["email"]
+        user = User.objects.get(email=email)
+        user.otp = randint(0000, 9999)
+        user.save()
+        subject = "Reset Password"
+        message = f"""Hi {user.username},
+        Welcom back ,
+        Your OTP for reseting your password is {user.otp}
+        for {user.email}
+        """
+        email_from = "info@meropasal.com"
+        recipient_list = [
+            user.email,
+        ]
+        send_mail(subject, message, email_from, recipient_list)
+        return Response(
+            {
+                "message": "Password reset OTP has been sent.",
+            },
+            status=status.HTTP_200_OK,
+        )
+
+    @swagger_auto_schema(
+        request_body=PasswordUpdateSerializer,
+        method="PUT",
+    )
+    @action(detail=False, methods=["PUT"])
+    def password_update(self, request):
+        email = request.data.get("email")
+        user = get_object_or_404(User, email=email)
+        serializer = PasswordUpdateSerializer(instance=user, data=request.data)
+        serializer.is_valid(raise_exception=True)
+        serializer.save()
+        return Response(
+            {
+                "message": "Password updated successfully",
             },
             status=status.HTTP_200_OK,
         )

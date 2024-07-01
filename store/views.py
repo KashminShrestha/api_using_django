@@ -6,11 +6,16 @@ from store.paginations import ProductPagination
 from store.filters import ProductFilterSet
 from .models import Category, Product
 from .serializers import CategorySerializer, ProductSerializer
+
 # from rest_framework import status
 
 from rest_framework.viewsets import ModelViewSet
 from django_filters import rest_framework as filters
 from rest_framework.filters import SearchFilter
+from rest_framework.permissions import (
+    IsAuthenticatedOrReadOnly,
+)
+from .permissions import CustomDjangoModelPermissions
 
 # Create your views here.
 # using api view
@@ -151,13 +156,17 @@ class CategoryDetail(
 class CategoryViewSet(ModelViewSet):
     queryset = Category.objects.all()
     serializer_class = CategorySerializer
+    permission_classes = [CustomDjangoModelPermissions]
 
 
 class ProductViewSet(ModelViewSet):
-    queryset = Product.objects.select_related('category').all()
+    queryset = Product.objects.select_related("category").all()
     serializer_class = ProductSerializer
     pagination_class = ProductPagination
     filter_backends = (filters.DjangoFilterBackend, SearchFilter)
     filterset_class = ProductFilterSet
     # filterset_fields = ('category_id',)
-    search_fields = ('name',)
+    search_fields = ("name",)
+    permission_classes = [
+        IsAuthenticatedOrReadOnly,
+    ]

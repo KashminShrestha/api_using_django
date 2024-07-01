@@ -1,3 +1,4 @@
+from django.contrib.auth.hashers import make_password
 from rest_framework import serializers
 from rest_framework.exceptions import ValidationError
 from django.contrib.auth import get_user_model
@@ -86,4 +87,42 @@ class OTPVerificationSerializer(serializers.Serializer):
     def update(self, instance, validate_data):
         instance.is_active = True
         instance.save()
+        return instance
+
+
+class PasswordResetSerializer(serializers.Serializer):
+    email = serializers.EmailField()
+
+    def validate_email(self, value):
+        user = User.objects.filter(email=value).exists()
+        if not user:
+            raise ValidationError(
+                {
+                    "details": " User with this email does not exist.",
+                }
+            )
+        return value
+
+
+class PasswordUpdateSerializer(serializers.Serializer):
+    email = serializers.EmailField()
+    otp = serializers.IntegerField()
+    password = serializers.CharField(max_length=255)
+
+    def validate(self, attrs):
+        user = User.objects.filter(
+            email=attrs.get("email"), otp=attrs.get("otp")
+        ).exists()
+        if not user:
+            raise ValidationError(
+                {
+                    "details": " email or otp is stale.",
+                }
+            )
+        return attrs
+
+    def update(self, instance, validate_data):
+        instance.password = make_password(validate_data.get("password"))
+        instance.save()
+
         return instance
